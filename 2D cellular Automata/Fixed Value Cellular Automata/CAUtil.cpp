@@ -162,17 +162,18 @@ void printrow (int PopArray[ArraySize][ArraySize])
 
 				else if (y[1][1] == 2){ //predator
 					PopArray[i][j] = 0;
-					if ((PyCount == 0) && (PdCount == 0)){//lonely and hungry
+					if ((PyCount == 0) && (PdCount == 0))		//lonely and hungry
+					{
 							if (CellProb <  P3)
 								PopArray[i][j] = 2;
-							}
+					}
 
-					else if ((PyCount == 0) && (PdCount != 0)){ //starvation and competition
-						PopArray[i][j] = 0;
-						/*if (CellProb <=  P4)
+					else if ((PyCount == 0) && (PdCount != 0)) //starvation and competition
+					{ 
+						if (CellProb <=  P4)
 								PopArray[i][j] = 2;
 							else
-								PopArray[i][j] = 0;*/
+								PopArray[i][j] = 0;
 					}
 
 					else if ((PyCount != 0) && (PdCount == 0)){ //lonley
