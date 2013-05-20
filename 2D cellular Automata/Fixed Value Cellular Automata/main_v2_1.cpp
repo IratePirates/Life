@@ -9,7 +9,7 @@
 Pd Predators
 Py Prey
 *******************************/
-
+//#define VS2008
 
 int main( void)
 {
@@ -17,10 +17,10 @@ int main( void)
 HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 CONSOLE_SCREEN_BUFFER_INFO bufferInfo;
 GetConsoleScreenBufferInfo(h, &bufferInfo);
-
+#ifdef VS2008
   FILE * pFile;
   pFile = fopen ("data.csv","w");
-
+#endif
 srand( (unsigned)time( NULL ) );
 	int PopArray[ArraySize][ArraySize] =  {0};
 	int TempPop[ArraySize][ArraySize] = {0};
@@ -148,7 +148,10 @@ printrow(PopArray);
 							}
 						}
 					}
-					fprintf(pFile, "%d,%d\n", PYCount, PDCount);
+	
+#ifdef VS2008
+fprintf(pFile, "%d,%d\n", PYCount, PDCount);
+#endif				
 					
 					//if(CAGen>100){
 					//printf("\n");
@@ -177,12 +180,13 @@ PDCount = 0;
 			//}
 		//}
 	//}
+#ifdef VS2008
 fclose (pFile);
 
 int wait = 0;
 scanf("%d", &wait );
+#endif	
 
-	return 0;
-
+return 0;
 }
 	

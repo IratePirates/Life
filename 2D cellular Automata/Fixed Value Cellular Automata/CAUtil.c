@@ -4,10 +4,11 @@
 
 void printrow (int PopArray[ArraySize][ArraySize])
 	{
+		int i;
+		int j;		
+		
 		fflush(stdout);
-			//print array
-		int i, j;
-
+		
 	for( i= 0 ;  i< ArraySize; i++){
 		for(j= 0 ;  j< ArraySize; j++){
 			if (PopArray[i][j]==2){
