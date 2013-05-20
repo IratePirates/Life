@@ -3,26 +3,29 @@
 #include "Parameters.h"
 
 void printrow (int PopArray[ArraySize][ArraySize])
+{
+	int i;
+	int j;		
+		
+	fflush(stdout);
+		
+	for( i= 0 ;  i< ArraySize; i++)
 	{
-		int i;
-		int j;		
-		
-		fflush(stdout);
-		
-	for( i= 0 ;  i< ArraySize; i++){
-		for(j= 0 ;  j< ArraySize; j++){
-			if (PopArray[i][j]==2){
-		printf("1");
-	}
-	else if (PopArray[i][j]==1)
-		printf("2");
-	else
-		printf(" ");
-	}
+		for(j= 0 ;  j< ArraySize; j++)
+		{
+			if (PopArray[i][j]==2)
+			{
+				printf("1");
+			}
+			else if (PopArray[i][j]==1)
+				printf("2");
+			else
+				printf(" ");
+		}
 
 	printf("\n");
 	}
-	}
+}
 /*
 	void nextstate(int TempPop[ArraySize][ArraySize], int PopArray[ArraySize][ArraySize]){
 		int x1, x2, x3 = {0};
